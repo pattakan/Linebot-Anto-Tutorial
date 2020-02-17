@@ -31,7 +31,7 @@ Ex.
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     message = event.message.text
-    if(message == 'channel1 on'):
+if(message == 'channel1 on'):
         anto.pub('myChannel1', 1)
         line_bot_api.reply_message(
             event.reply_token,
@@ -51,6 +51,26 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text="Turn Off channel2"))
+    elif(message == 'channel3 on'):
+        anto.pub('myChannel3', 1)
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text="Turn On channel3"))
+    elif(message == 'channel3 off'):
+        anto.pub('myChannel3', 0)
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text="Turn Off channel3"))
+    elif(message == 'channel4 on'):
+        anto.pub('myChannel4', 1)
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text="Turn On channel4"))
+    elif(message == 'channel4 off'):
+        anto.pub('myChannel4', 0)
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text="Turn Off channel4"))
 ```
 
 - Create Heroku Apps
